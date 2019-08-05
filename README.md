@@ -1,18 +1,8 @@
-# hatebaseVocabulary
-Use R to retrieve personal token and get vocabulary from Hatebase.org
-
-# Load packages
-
-```{r message=FALSE, warning=FALSE}
-# Load packages
-library("httr") # API calls
-library("jsonlite") # Extracting content from Hatebase repo
-library("tidyverse") # Several data processing packages
-library("data.table") # Convert list to data frame
-```
+# Get Hatebase vocabulary 
+Here's a description of how to query Hatebase's API using R. 
 
 # How to extract information from a response object
-Before getting started, here's a quick breakdown of how these functions work. In both phases, you'll use `POST()` to retrieve a response ojbect (`r`), and then you'll use the `content()` and `fromJSON` functions to extract information from the response object. 
+Before getting started, here's a quick breakdown of how these functions work. Hatebase uses a two-phase approach, but both phases follow a similar format in terms of response object retrieval. First, you'll use `POST()` to retrieve a response ojbect (`r`), and then you'll use the `content()` and `fromJSON` functions to extract information from the response object. 
 
 ## POST()
 The `POST()` function from the `httr` package lets you provide your personal information to Hatebase, and it provides you with informatin too. In the Authentication phase, it'll return your `token`, and in the Query phase, it'll ruturn the total number of `nPages`.
