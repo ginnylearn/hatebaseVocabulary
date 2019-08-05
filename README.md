@@ -1,7 +1,7 @@
 # Get Hatebase vocabulary 
 Here's a description of how to query Hatebase's API using R. 
 
-# How to extract information from a response object
+# How to retrieve & extract information from a response object
 Before getting started, here's a quick breakdown of how these functions work. Hatebase uses a two-phase approach, but both phases follow a similar format in terms of response object retrieval. First, you'll use `POST()` to retrieve a response ojbect (`r`), and then you'll use the `content()` and `fromJSON` functions to extract information from the response object. 
 
 ## POST()
@@ -58,7 +58,7 @@ In order to retrieve the Hatebase vocabulary, you'll need three things:
 3. Total number of pages in the Hatebase vocabulary dataset (`nPages`): you'll need to retrieve this before you can download the dataset since the total number of pages changes with every new update
 
 ## Number of pages 
-In order to retrieve the number of pages in the Hatebase vocabulary dataset, you need to make a vocabulary query without specifying the page numbers. The response object (`r`) contains the number of pages, but you'll need to do a little bit of data wrangling to extract the information (for a description of these steps, refer to **How to extract information from a response object**) 
+In order to retrieve the number of pages in the Hatebase vocabulary dataset, you need to make a vocabulary query without specifying the page numbers. The response object (`r`) contains the number of pages, but you'll need to do a little bit of data wrangling to extract the information (for a description of these steps, refer to **How to retrieve & extract information from a response object**) 
 
 ```{r}
 # Retrieve page numbers 
