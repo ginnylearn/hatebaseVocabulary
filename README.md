@@ -12,7 +12,6 @@ library("data.table") # Convert list to data frame
 ```
 
 # How to extract information from a response object
-
 Before getting started, here's a quick breakdown of how these functions work. In both phases, you'll use `POST()` to retrieve a response ojbect (`r`), and then you'll use the `content()` and `fromJSON` functions to extract information from the response object. 
 
 ## POST()
@@ -62,7 +61,6 @@ token <- hatebaseToken(version = version, api_key = api_key)
 ```
 
 # Query phase: Get vocabulary 
-
 In order to retrieve the Hatebase vocabulary, you'll need three things:
 
 1. Version number (`version`): already created in Authentication phase
@@ -70,7 +68,6 @@ In order to retrieve the Hatebase vocabulary, you'll need three things:
 3. Total number of pages in the Hatebase vocabulary dataset (`nPages`): you'll need to retrieve this before you can download the dataset since the total number of pages changes with every new update
 
 ## Number of pages 
-
 In order to retrieve the number of pages in the Hatebase vocabulary dataset, you need to make a vocabulary query without specifying the page numbers. The response object (`r`) contains the number of pages, but you'll need to do a little bit of data wrangling to extract the information (for a description of these steps, refer to **How to extract information from a response object**) 
 
 ```{r}
@@ -117,6 +114,7 @@ for(i in 1:nPages){
 
 ```
 
+## Convert from list to data frame
 Once you've retrieved the Hatebase vocabulary, you can convert it from a list to a data frame by taking the following steps: 
 ```{r}
 # Convert to data frame
